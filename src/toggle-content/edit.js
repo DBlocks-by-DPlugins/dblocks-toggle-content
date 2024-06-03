@@ -46,9 +46,9 @@ export default function Edit(props) {
 	return (
 		<div { ...useBlockProps() }>
 			<BlockControls>
-				<ToolbarGroup>
+			<ToolbarGroup>
 					<ToolbarButton
-						icon={isEditing ? visibility : edit}
+						icon={isEditing ? 'visibility' : 'edit'}
 						label={isEditing ? __('Switch to Preview', 'toggle-content') : __('Switch to Edit', 'toggle-content')}
 						onClick={toggleEditing}
 					/>
