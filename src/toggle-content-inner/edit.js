@@ -1,36 +1,29 @@
 import { __ } from '@wordpress/i18n';
+import { useSelect } from '@wordpress/data';
 import { useBlockProps, InnerBlocks, InnerBlocksButtonBlockAppender } from '@wordpress/block-editor';
-import { IconButton } from '@wordpress/components';
 import './editor.scss';
 
-function MyButtonBlockAppender( { rootClientId } ) {
+export default function Edit(props) {
+    const { clientId } = props;
+    const innerBlockCount = useSelect( ( select ) => select( 'core/block-editor' ).getBlock( clientId ).innerBlocks.length, [clientId] );
+
+    const appenderToUse = () => {
+        if ( innerBlockCount < 1 ) {
+            return (
+                <InnerBlocks.ButtonBlockAppender/>
+            );
+        } else {
+            return null;
+        }
+    }
+
     return (
-        <InnerBlocks.ButtonBlockAppender
-            rootClientId={ rootClientId }
-            renderToggle={ ( { onToggle, disabled } ) => (
-                <IconButton
-                    className="my-button-block-appender"
-                    onClick={ onToggle }
-                    disabled={ disabled }
-                    label={ __( 'Add a Block', 'text-domain' ) }
-                    icon="plus"
+        <div { ...useBlockProps() }>
+            <div className="inner-content">
+                <InnerBlocks
+                    renderAppender={ appenderToUse }
                 />
-            ) }
-        />
+            </div>
+        </div>
     );
-}
-
-export default function Edit({ clientId }) {
-
-	return (
-		<div { ...useBlockProps() }>
-			<div className="inner-content">
-				<InnerBlocks 
-					renderAppender={ () => (
-						<MyButtonBlockAppender rootClientId={ clientId } />
-					) }
-				/>
-			</div>
-		</div>
-	);
 }
