@@ -1,4 +1,3 @@
-// Edit.js
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InnerBlocks, BlockControls } from '@wordpress/block-editor';
 import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
@@ -12,7 +11,7 @@ export default function Edit(props) {
 	const { clientId } = props;
 	const [isVisible, setIsVisible] = useState(true);
 	const [isEditing, setIsEditing] = useState(true);
-	const [alignment, setAlignment] = useState('left');
+	const [alignment, setAlignment] = useState('justify-left');
 
 	const toggleContent = () => {
 		setIsVisible(!isVisible);
@@ -38,15 +37,19 @@ export default function Edit(props) {
 	const innerClassName = isEditing ? (isVisible ? 'hide-inner-1' : 'hide-inner-2') : 'inner-in-preview';
 
 	const alignmentIcons = {
-		left: <Icon icon={justifyLeft} />,
-		center: <Icon icon={justifyCenter} />,
-		right: <Icon icon={justifyRight} />
+		'justify-left': <Icon icon={justifyLeft} />,
+		'justify-center': <Icon icon={justifyCenter} />,
+		'justify-right': <Icon icon={justifyRight} />
 	};
 
+	const blockProps = useBlockProps({
+		className: alignment,
+	});
+
 	return (
-		<div { ...useBlockProps() }>
+		<div { ...blockProps }>
 			<BlockControls>
-			<ToolbarGroup>
+				<ToolbarGroup>
 					<ToolbarButton
 						icon={isEditing ? 'visibility' : 'edit'}
 						label={isEditing ? __('Switch to Preview', 'toggle-content') : __('Switch to Edit', 'toggle-content')}
@@ -59,20 +62,20 @@ export default function Edit(props) {
 						{
 							icon: <Icon icon={justifyLeft} />,
 							title: 'Left',
-							isActive: alignment === 'left',
-							onClick: () => setAlignment('left'),
+							isActive: alignment === 'justify-left',
+							onClick: () => setAlignment('justify-left'),
 						},
 						{
 							icon: <Icon icon={justifyCenter} />,
 							title: 'Center',
-							isActive: alignment === 'center',
-							onClick: () => setAlignment('center'),
+							isActive: alignment === 'justify-center',
+							onClick: () => setAlignment('justify-center'),
 						},
 						{
 							icon: <Icon icon={justifyRight} />,
 							title: 'Right',
-							isActive: alignment === 'right',
-							onClick: () => setAlignment('right'),
+							isActive: alignment === 'justify-right',
+							onClick: () => setAlignment('justify-right'),
 						}
 					]}
 					isCollapsed

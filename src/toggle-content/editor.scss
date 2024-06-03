@@ -1,8 +1,10 @@
 @import './styles/toggle';
 
-// .wp-block-dblocks-dblocks-youtube-lazyload {
-// 	@import './styles/thumb';
-// 	@import './styles/play-button';
-// 	@import './styles/wrapper';
-// 	@import './styles/edit-mode';
-// }
+.wp-block-dblocks-dblocks-toggle-content {
+    display: flex;
+    flex-direction: column;
+
+    &.justify-left .toggle-switch-wrap {margin-right: auto;}
+    &.justify-right .toggle-switch-wrap {margin-left: auto;}
+    &.justify-center .toggle-switch-wrap {margin-right: auto; margin-left: auto; }
+}
