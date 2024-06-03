@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "dblocks/dblocks-toggle-content-inner",
+    "version": "1.0.0",
+    "title": "Toggle Content",
+    "category": "dblocks",
+    "icon": "video-alt3",
+    "description": "Block that load YouTube video scripts only if user clicks on the play button",
+    "example": {},
+    "supports": {
+        "html": false,
+        "align": [
+            "wide",
+            "full"
+        ]
+    },
+    "attributes": {        
+    },
+    "textdomain": "dblocks-toggle-content-inner",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css",
+    "viewScript": "file:./view.js"
+}

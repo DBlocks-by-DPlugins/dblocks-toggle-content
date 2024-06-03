@@ -1,0 +1,8 @@
+@import './styles/sidebar';
+
+.wp-block-dblocks-dblocks-youtube-lazyload {
+	@import './styles/thumb';
+	@import './styles/play-button';
+	@import './styles/wrapper';
+	@import './styles/edit-mode';
+}
