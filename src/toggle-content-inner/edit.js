@@ -1,34 +1,36 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
-import { useState } from '@wordpress/element';
+import { useBlockProps, InnerBlocks, InnerBlocksButtonBlockAppender } from '@wordpress/block-editor';
+import { IconButton } from '@wordpress/components';
 import './editor.scss';
 
-export default function Edit() {
-	const [isVisible, setIsVisible] = useState(true);
-	const toggleContent = () => {
-		setIsVisible(!isVisible);
-	};
+function MyButtonBlockAppender( { rootClientId } ) {
+    return (
+        <InnerBlocks.ButtonBlockAppender
+            rootClientId={ rootClientId }
+            renderToggle={ ( { onToggle, disabled } ) => (
+                <IconButton
+                    className="my-button-block-appender"
+                    onClick={ onToggle }
+                    disabled={ disabled }
+                    label={ __( 'Add a Block', 'text-domain' ) }
+                    icon="plus"
+                />
+            ) }
+        />
+    );
+}
 
-	const ALLOWED_BLOCKS = [ 'core/paragraph', 'core/image', 'core/heading' ];
-	const TEMPLATE = [
-		[ 'core/paragraph', { placeholder: 'Add a paragraph' } ],
-		[ 'core/image', {} ],
-		[ 'core/heading', { placeholder: 'Add a heading' } ],
-	];
+export default function Edit({ clientId }) {
 
 	return (
 		<div { ...useBlockProps() }>
-			<button onClick={toggleContent}>
-				{ __( 'Toggle Content', 'toggle-content' ) }
-			</button>
-			{isVisible && (
-				<div className="inner-content">
-					<InnerBlocks 
-						allowedBlocks={ ALLOWED_BLOCKS } 
-						template={ TEMPLATE }
-					/>
-				</div>
-			)}
+			<div className="inner-content">
+				<InnerBlocks 
+					renderAppender={ () => (
+						<MyButtonBlockAppender rootClientId={ clientId } />
+					) }
+				/>
+			</div>
 		</div>
 	);
 }

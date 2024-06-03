@@ -1,4 +1,4 @@
-=== DBlocks YouTube Lazyload ===
+=== DBlocks Toggle Content ===
 Contributors: dplugins, krstivoja
 Donate link: https://tareq.co/donate/
 Tags: block, youtube, lazy, load, gdpr, dblocks, dplugins
@@ -25,7 +25,7 @@ GDPR friendly lazyload youtube player that load content only if user click on th
 -   **Multiple Viewing Modes**: Includes 'Code', 'Preview', and 'Split View' modes, enabling you to code and preview content simultaneously or separately, optimizing your workflow.
 
 
-### Why Choose YouTube Lazyload
+### Why Choose Toggle Content
 
 -   **GDPR friendly**: It will not load google / youtube scripts unless user does not hit play button
 -   **Optimised page speed**: It will laod image instead of entire video and youtube scripts on page load
@@ -35,7 +35,7 @@ GDPR friendly lazyload youtube player that load content only if user click on th
 
 1. Upload the plugin files to the `/wp-content/plugins/dblocks-youtube-lazyload` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
-3. Use Youtube LazyLoad from DBlocks group
+3. Use Toggle Content from DBlocks group
 
 == Frequently Asked Questions ==
 
