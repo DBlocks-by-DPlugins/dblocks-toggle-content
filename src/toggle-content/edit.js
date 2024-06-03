@@ -1,3 +1,5 @@
+// Parrent
+
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 import { useState } from '@wordpress/element';
@@ -34,6 +36,7 @@ export default function Edit() {
 						<InnerBlocks 
 							allowedBlocks={ ALLOWED_BLOCKS } 
 							template={ TEMPLATE }
+							renderAppender={() => <InnerBlocks.ButtonBlockAppender />}
 						/>
 					) : (
 						<p>{ __( 'Maximum number of items reached.', 'toggle-content' ) }</p>
