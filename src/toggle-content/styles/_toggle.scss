@@ -1,3 +1,12 @@
+.hide-inner-1 .toggle-block-inner-1 { display: none !important; }
+.hide-inner-2 .toggle-block-inner-2 { display: none !important; }
+
+.toggle-switch-wrap{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 /* ToggleSwitch.scss */
 .toggle-switch {
     display: inline-block;

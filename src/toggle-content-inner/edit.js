@@ -1,7 +1,5 @@
 // Child - dblocks/dblocks-toggle-content-inner
 
-// Child - dblocks/dblocks-toggle-content-inner
-
 import { __ } from '@wordpress/i18n';
 import { useSelect } from '@wordpress/data';
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
