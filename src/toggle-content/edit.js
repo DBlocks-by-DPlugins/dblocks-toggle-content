@@ -1,9 +1,11 @@
 // Parrent - dblocks/dblocks-toggle-content
 
+// Edit.js
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 import { useState } from '@wordpress/element';
 import { useSelect } from '@wordpress/data';
+import ToggleSwitch from './components/ToggleSwitch';
 import './editor.scss';
 
 export default function Edit(props) {
@@ -28,9 +30,7 @@ export default function Edit(props) {
 
 	return (
 		<div { ...useBlockProps() }>
-			<button onClick={toggleContent}>
-				{ __( 'Toggle Content', 'toggle-content' ) }
-			</button>
+			<ToggleSwitch isChecked={isVisible} onChange={toggleContent} />
 			{isVisible && (
 				<div className="inner-content">
 					{innerBlockCount < MAX_ITEMS ? (
@@ -46,4 +46,3 @@ export default function Edit(props) {
 		</div>
 	);
 }
-

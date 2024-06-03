@@ -3,7 +3,7 @@ import React from 'react';
 
 // Define your custom SVG icon component
 const CustomIcon = () => (
-<svg width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m69.699 76.102c14.398 0 26.102-11.699 26.102-26.102 0-14.398-11.699-26.102-26.102-26.102h-39.398c-14.402 0-26.102 11.703-26.102 26.102s11.699 26.102 26.102 26.102zm-56.5-26.102c0-9.6992 7.8008-17.5 17.5-17.5s17.5 7.8008 17.5 17.5-7.8008 17.5-17.5 17.5-17.5-7.8008-17.5-17.5z"/></svg>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M19 6.2h-5.9l-.6-1.1c-.3-.7-1-1.1-1.8-1.1H5c-1.1 0-2 .9-2 2v11.8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8.2c0-1.1-.9-2-2-2zm.5 11.6c0 .3-.2.5-.5.5H5c-.3 0-.5-.2-.5-.5V6c0-.3.2-.5.5-.5h5.8c.2 0 .4.1.4.3l1 2H19c.3 0 .5.2.5.5v9.5z"></path></svg>
 );
 
 // Export your custom icon component
